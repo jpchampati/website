@@ -147,10 +147,170 @@ hr {
   margin-top: 16px;
 }
 
+/* Research highlights carousel (homepage) */
+.highlights {
+  position: relative;
+  margin: 10px 0 6px;
+}
+
+.highlights-viewport {
+  overflow: hidden;
+  border: 1px solid #d7d7d7;
+  border-radius: 6px;
+  touch-action: pan-y;
+}
+
+.highlights-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+body.light a.highlight-slide {
+  flex: 0 0 100%;
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  -webkit-user-drag: none;
+}
+
+.highlight-figure {
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 52px;
+  background: white;
+}
+
+.highlights.is-single .highlight-figure {
+  padding: 16px;
+}
+
+.highlight-figure img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.highlight-caption {
+  padding: 12px 20px 16px;
+  border-top: 1px solid #eee;
+  background: #fafafa;
+}
+
+.highlight-tag {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #754588;
+}
+
+.highlight-title {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 17px;
+  font-weight: bold;
+  color: #2f5fee;
+}
+
+a.highlight-slide:hover .highlight-title,
+a.highlight-slide:focus .highlight-title {
+  text-decoration: underline;
+}
+
+.highlight-text {
+  display: block;
+  color: #444;
+}
+
+.highlights-prev,
+.highlights-next {
+  position: absolute;
+  top: 111px;
+  width: 36px;
+  height: 36px;
+  margin-top: -18px;
+  padding: 0;
+  border: 1px solid #d7d7d7;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  font-size: 24px;
+  line-height: 32px;
+  color: #333;
+  cursor: pointer;
+}
+
+.highlights-prev {
+  left: 8px;
+}
+
+.highlights-next {
+  right: 8px;
+}
+
+.highlights-prev:hover,
+.highlights-next:hover {
+  border-color: #754588;
+  background: #754588;
+  color: white;
+}
+
+.highlights-dots {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.highlights-dots button {
+  width: 10px;
+  height: 10px;
+  margin: 0 4px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #ccc;
+  cursor: pointer;
+}
+
+.highlights-dots button.is-active {
+  background: #754588;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .highlights-track {
+    transition: none;
+  }
+}
+
 @media (max-width: 767px) {
   .content-wrap {
     width: calc(100% - 20px);
     margin-left: 10px;
     margin-right: 10px;
+  }
+
+  .highlight-figure {
+    height: 110px;
+    padding: 10px 40px;
+  }
+
+  .highlights-prev,
+  .highlights-next {
+    top: 56px;
+    width: 30px;
+    height: 30px;
+    margin-top: -15px;
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  .highlights-prev {
+    left: 4px;
+  }
+
+  .highlights-next {
+    right: 4px;
   }
 }
