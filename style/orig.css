@@ -165,16 +165,17 @@ hr {
   transition: transform 0.5s ease;
 }
 
-body.light a.highlight-slide {
+.highlight-slide {
   flex: 0 0 100%;
-  display: block;
-  color: inherit;
-  text-decoration: none;
+}
+
+.highlight-slide a,
+.highlight-slide img {
   -webkit-user-drag: none;
 }
 
 .highlight-figure {
-  height: 220px;
+  height: 280px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -216,8 +217,9 @@ body.light a.highlight-slide {
   color: #2f5fee;
 }
 
-a.highlight-slide:hover .highlight-title,
-a.highlight-slide:focus .highlight-title {
+.highlight-title:hover,
+.highlight-title:focus,
+.highlight-figure:hover + .highlight-caption .highlight-title {
   text-decoration: underline;
 }
 
@@ -226,10 +228,32 @@ a.highlight-slide:focus .highlight-title {
   color: #444;
 }
 
+.highlight-links {
+  display: block;
+  margin-top: 8px;
+}
+
+body.light .highlight-links a {
+  display: inline-block;
+  margin-right: 6px;
+  padding: 1px 12px;
+  border: 1px solid #754588;
+  border-radius: 12px;
+  font-size: 13px;
+  color: #754588;
+}
+
+body.light .highlight-links a:hover,
+body.light .highlight-links a:focus {
+  background: #754588;
+  color: white;
+  text-decoration: none;
+}
+
 .highlights-prev,
 .highlights-next {
   position: absolute;
-  top: 111px;
+  top: 141px;
   width: 36px;
   height: 36px;
   margin-top: -18px;
@@ -292,13 +316,13 @@ a.highlight-slide:focus .highlight-title {
   }
 
   .highlight-figure {
-    height: 110px;
+    height: 170px;
     padding: 10px 40px;
   }
 
   .highlights-prev,
   .highlights-next {
-    top: 56px;
+    top: 86px;
     width: 30px;
     height: 30px;
     margin-top: -15px;

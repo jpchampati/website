@@ -1,5 +1,5 @@
 // Research highlights carousel on the homepage.
-// Each <a class="highlight-slide"> inside .highlights-track is one slide.
+// Each <div class="highlight-slide"> inside .highlights-track is one slide.
 // Arrows, dots, swiping and autoplay are added only when there are two or more slides.
 (function () {
   var reduceMotion = window.matchMedia &&
@@ -36,7 +36,10 @@
     dotsBox.className = "highlights-dots";
 
     var dots = slides.map(function (slide, i) {
-      slide.draggable = false;
+      Array.prototype.forEach.call(slide.querySelectorAll("a, img"), function (el) {
+        el.draggable = false;
+      });
+      slide.setAttribute("role", "group");
       slide.setAttribute("aria-roledescription", "slide");
       slide.setAttribute("aria-label", (i + 1) + " of " + count);
       var dot = makeButton("", "Show highlight " + (i + 1), "");
@@ -55,7 +58,7 @@
       slides.forEach(function (slide, j) {
         var active = j === index;
         slide.setAttribute("aria-hidden", active ? "false" : "true");
-        slide.tabIndex = active ? 0 : -1;
+        slide.inert = !active;
         dots[j].classList.toggle("is-active", active);
       });
     }

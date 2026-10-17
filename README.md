@@ -5,7 +5,7 @@ Create a website about myself and my lab and update it from time to time
 
 - `index.html`, `research.html`, `publication.html`, `lab.html`, `news.html`: the main pages (plain HTML; edit them directly).
 - `style/`: page styles.
-- `images/highlights/` and `js/highlights.js`: the Research Highlights carousel on the homepage. To add a highlight, put the figure in `images/highlights/` and copy one `<a class="highlight-slide">` block in `index.html`; arrows, dots, swiping and autoplay turn on automatically once there are two or more slides.
+- `images/highlights/` and `js/highlights.js`: the Research Highlights carousel at the top of the Research page. To add a highlight, put the figure in `images/highlights/` and copy one `<div class="highlight-slide">` block in `research.html`; arrows, dots, swiping and autoplay turn on automatically once there are two or more slides.
 - `images/`: profile photo and favicon.
 
 ## Publishing
